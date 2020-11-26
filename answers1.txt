@@ -1,0 +1,36 @@
+Answers to Section I:
+
+
+
+1) What components are part of the Von Neuman Architecture?
+Every computer/tablet or smartphone today use the architecture of Von Neumann within the hardware system. What was new with this model was that now, the program and data was within the same system. According to the Wikipedia link given in lecture 9, page 11, about Von Neumann Architecture, the components of this model contains of:
+
+- A processing unit that contains an arithmetic logic unit and processor register
+- A control unit that contains an instruction register and program counter
+- A memory unit where the program and data can be stored was revolutionary for this model, and an important component.
+- External mass storage
+- Input and output mechanisms
+https://en.wikipedia.org/wiki/Von_Neumann_architecture
+
+
+
+
+2) What is user space?
+A user space is one of the components of an operative system (OS). To understand the definition of a user space furthermore, let us first define an OS. Lecture 9, page 15 defines an OS as a system software that manages computer hardware, software resources, and provides common services for computer programs. The 3 components of an OS are: The Kernel, User Space and the Schell. 
+Page 17 of lecture 9, defines a user space as all the code that runs outside the operating systems kernel, and refers to various programs and libraries that the operating system uses to interact with the kernel: software that performs input/output, manipulates file system objects, application software, etc.
+
+
+
+3) What is the schell?
+A shell is a tool for manipulating data and executing several applications under certain conditions (Lecture 9, page36). Shells in general are user interfaces that are using either command-line interface (CLI) or graphical user interface (GUI) to access the services of the operating system. In order for a user to use CLI, they should be familiar with the commands and their calling syntax, and to understand concepts about the shell-specific scripting language, for example sh, bash, csh etc..
+The GUI on the other hand, requires less from a computer beginner and is seems to be easier to learn. The disadvantages in GUI is that it may at times require some CLI knowledge.Source: https://en.wikipedia.org/wiki/Shell_(computing)
+
+
+
+4) Where is the shell located? 
+The shell is located within the User Space of an OS, because it is something that can be created/accessed by a user. By doing shell scripting, we are referring to an interaction between the User Space and the Kernel Space. Within the User Space, the shell shares the space with Application Software, libraries, Daemons, and Tools.
+
+
+
+5) What is the main task of the shell?
+What the shell is responsible for is the execution of all the programs that a user requests from their terminal (CLI). Whenever a user types a line (Command Line) to the shell, it analyzes in order to determine what to do, for example programs to be executed or arguments to pass on to a program. https://www.informit.com/articles/article.aspx?p=31480&seqNum=4

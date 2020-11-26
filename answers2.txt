@@ -1,0 +1,275 @@
+Answers, Section II - Unix, Scripting:
+
+6) What is the octal representation of a file the can be read and written only by its owner?
+To reply this question I have used page 64-65 in the book: Ten Steps to Linux Survival, by  Jim Lehmer.
+
+We are aware of that a file is given: -, and a directory is given: d. Here we would use the "chmod" to change the permissions. 
+With the Octal numbers, "no permission" would be given the number of "zero", and "all permission" would be given the number of "seven". To think the permission as binary places would be helpful, this explains the system:
+r=2^2=4
+w=2^1=2
+x=2^0=1
+
+Notice, that if I combine 4+2+1, I will achieve the result 7. So the number 7 would gives a user read, write and execution access.
+The octal representation of a file that can be only read and written by the user in our case would look like this:
+r--=2^2+2^1+0 => 600, 
+
+And since it is only the user who can read the file, the group and other would have the value of zero, where both row and x in them both are zero. So, to answer the question, we will get this result:
+	chmod 600 answer2.txt
+Where the result would be similar to this in the symbolic version:
+	-rw-------
+
+
+
+7) In UNIX systems, what is the common name of the special user who can access and modify every file?
+In UNIX systems, the name of the special user that can access and modify every file is Super User, which is the root user. In order to access it, one can use the sudo command, where sudo stands for Super User DO. 
+https://www.unixtutorial.org/commands/sudo
+
+
+
+8) Which file permission classes are available in UNIX systems?
+The file permission classes are:
+- User
+- Group
+- Others 
+
+where the last class: "others", are neither user or member of a group.
+
+The file permission classes, each have each these permissions (discussed previously in 6.):
+rwx
+
+
+This was solved with the help of the link, given in lecture 10 (Scripting I):
+https://alexoviedo999.gitbooks.io/javascript-distill/content/unixlinuxterminal.html#changing-access-permissions-
+
+
+
+9) AS of 2020, which percentage of servers have UNIX-like OS?
+According to W3Techs.com, as of 16. of November 2020, 71.8% of the server OS are unix or unix-like.
+
+Source link: https://w3techs.com/technologies/overview/operating_system
+
+
+
+10) The command SSH will:
+Create an encrypted connection between a user and the area the user is connecting to, for example a server - in my case I will create a connection through my terminal to my folk site at NTNU. 
+
+Source: https://innsida.ntnu.no/wiki/-/wiki/Norsk/Sikker+med+SSH
+
+
+11) UNIX Command: access your current working directory?
+	pwd
+
+Source:https://leanpub.com/jelinux/read
+
+
+
+12. UNIX Command: rename files (give an example)?
+	mv
+
+	An example here would be for me to change a file called: navid.txt, to: navid2.txt. I would in this insert following in the terminal:
+	mv navid.txt navid2.txt
+
+Source: https://leanpub.com/jelinux/read
+
+	
+
+
+13. UNIX Command: schedule the execution of programs in the future?
+  	crontab
+		
+	Source: https://leanpub.com/jelinux/read#crontab
+
+
+
+
+14. UNIX Command: Forcefully shutdown the command with process ID 123
+	kill 123
+	Explanation behind my answer: I assume that the kill 123 (that kill on its self by default specifies signal 15 "SIGTERM"). If the projects still refuses to shutdown, we could use signal 9 "SIGKILL", with the code: kill -9 123.
+	source: https://leanpub.com/jelinux/read#kill
+
+
+
+15. UNIX Command: access your root user
+	sudo
+
+
+
+16. Crontab scheduled: At minute 30 on Sunday.
+	30 * * * 0
+	Explanation: programmed to run every at 30 throughout Sunday. First one: 00:30, and then 01:30 and so on..
+
+	source: https://crontab.guru/#30_*_*_*_0
+
+
+
+17. Crontab scheduled: At minute 30 on day-of-month 15.
+	30 * 15 * *
+	Explanation: program to be ruined every 30 minute, on the 15th day of the month
+
+	source: https://crontab.guru/#30_*_15_*_*
+	
+
+
+18. Crontab scheduled: At 05:30 on every day-of-week from Sunday through Monday in June.
+´	30 5 * 6 0-1
+	source: https://crontab.guru/#30_5_*_6_0-1
+
+	
+19. Script: print your name and date
+	#!/bin/bash
+
+	#echo your variable as an input
+
+	read -p "please enter your name: " name
+	echo "your name is: " $name
+
+	#date
+	echo "current date: $(date)"
+	
+	Source: from lab2
+	
+	
+
+
+20. Script: add two numeric values, print the result
+	#!/bin/bash
+	#adding two numeric values, print and result
+	read -p "Please enter first number: " num1
+	read -p "Please enter second number: " num2
+	echo "The total is: " $((num1+num2))
+	
+	Source: lab2
+
+21. Script: inputs username, prints “USERNAME stored”
+	
+	#!/bin/bash
+	#Storing a username
+	read -p "Please Enter your Username: " name
+	echo "USERNAME stored"
+
+
+
+22. Script: Store the output of the command “hostname” in a variable. Display “This script is running on _.” where “_” is the output of the “hostname” command.
+	#!/bin/bash
+	#Script where the output would be "hostname"
+	HOSTNAME=$(hostname)
+	echo “This script is running on $HOSTNAME”
+
+
+
+
+
+23. Script: Store the output of the working directory (from where the script is run) in a variable then print the variable.
+	#!/bin/bash
+	#Storing the output of the working directory in a variable, then printing the variable
+	output=$(pwd)
+	echo "The value of the output variable is: ${output}"
+	
+
+
+
+24. Create a step by step tutorial on how to create a cronjob that prints “Task scheduled at” + DATE. Cronjob is scheduled every 30 minutes on today’s date (only today).
+	1) In the terminal enter: crontab -e which will make you enter a file
+	2) read the text in order to get information about the execution of the cronjob
+	3) On a Mac, press I to edit the text
+	4) Go to crontab.guru in order to find out more about cronjobs
+	5) Insert the details of the task, inside followings:
+	* * * * *
+	Where 
+	- First star is for minutes
+	- Second star is for hour
+	- Third star is for date of the month
+	- Fourth star is for month
+	- Last star is for the day of a week
+	- Since today is the 20th of November, the result would be: 
+	*/30 * 20 11 * echo "Task scheduled at $(date)" 
+	
+	PS! If everything is correct, you should recieve e-mail on your NTNU account every 	30 minutes
+
+	Source: https://crontab.guru/#*/30_*_20_11_* 
+
+
+
+25. Create a script that takes an input (letter or number) that will display the answer of a question.The script should when started list a menu for the user with the different questions that can bechosen and which corresponding letter the user will have to give as input to display the answer ofthe desired question. One of the possible inputs the user should be able to make is "q" for quittingthe script. The menu should also have a default case where all the items is displayed again, or nochanges is made if the user gives an invalid input. Hint: use a switch case to be able to handle themenu. Each option in the menu should lead to an echo of the answer
+
+                                                               
+	#!/bin/bash
+
+	#Case statement
+
+	while
+	[ "$answer" != "q" ]
+	do
+
+	echo "What is your favorite food among these?"
+	echo "1) Pizza"
+	echo "2) Pasta"
+	echo "3) Burger"
+	echo "4) Lasagna"
+	echo "5) Biff"
+	echo "q) Quit the script"
+	echo -n "Choose one alternative: "
+
+	read -r answer
+	case $answer in
+        	1)
+                	clear
+                	echo "Pizza is delicious."
+                	read -r
+                	clear;;
+        	2)
+                	clear
+                	echo "Pasta is nice sometimes, yes."
+                	read -r
+                	clear;;
+        	3)
+                	clear
+                	echo "Burger is good with Blue Cheese."
+                	read -r
+                	clear;;
+        	4)
+                	clear
+                	echo "You can't find better Lasagna than in Italy."
+                	read -r
+                	clear;;
+        	5)
+                	clear
+                	echo "Eating Biff should be illegal."
+                	read -r
+                	clear;;
+        	q)
+                	echo "Bye!"
+                	exit 0;;
+        	*)
+                	echo "Unknown input, please enter a number between 1-5, or q for quitting."
+                	read -r;;
+	esac
+	done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

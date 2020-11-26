@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navid Amiris Answers in Web Fundamentals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+    <h1>IDG1100 OBLIG</h1>
+    <p class="p-headline">Navid Amiri</p>
+    </div>
+
+    <div>
+    <h3>1. What components are part of the Von Neuman Architecture</h3>
+    <p>Every computer, tablet or smartphone today use the architecture of Von Neumann within the hardware system. What was new with this model was that now, the program and data are within the same system. According to the Wikipedia link given in lecture 9, page 11, about Von Neumann Architecture, the components of this model contains of:</p>
+        <ul>
+        <li> A processing unit that contains an arithmetic logic unit and processor register</li>
+        <li> A control unit that contains an instruction register and program counter</li>
+        <li> A memory unit where the program and data can be stored was revolutionary for this model, and an important component.</li>
+        <li> External mass storage</li>
+        <li> Input and output mechanisms</li>
+        </ul>
+        <p>Source: https://en.wikipedia.org/wiki/Von_Neumann_architecture</p>
+    </div>
+
+
+
+
+    <div>
+    <h3>2. What is user space?</h3>
+    <p>A user space is one of the components of an operative system (OS). To understand the definition of a user space furthermore, let us first define an OS. Lecture 9, page 15 defines an OS as a system software that manages computer hardware, software resources, and provides common services for computer programs. The 3 components of an OS are: The Kernel, User Space and the Shell.</p>
+
+    <p>Page 17 of lecture 9, defines a user space as all the code that runs outside the operating systems kernel, and refers to various programs and libraries that the operating system uses to interact with the kernel: software that performs input/output, manipulates file system objects, application software, etc.</p>
+    </div>
+
+
+
+
+
+    <div>
+    <h3>3. What is the shell?</h3>
+    <p>A shell is a tool for manipulating data and executing several applications under certain conditions (Lecture 9, page36). Shells in general are user interfaces that are using either command-line interface (CLI) or graphical user interface (GUI) to access the services of the operating system. In order for a user to use CLI, they should be familiar with the commands and their calling syntax, and to understand concepts about the shell-specific scripting language, for example sh, bash, csh etc..</p>
+    <p>The GUI on the other hand, requires less from a computer beginner and is seems to be easier to learn. The disadvantages in GUI is that it may at times require some CLI knowledge.</p>
+    <p>Source: https://en.wikipedia.org/wiki/Shell_(computing)</p>
+    </div>
+
+
+
+    <div>
+    <h3>4. Where is the shell located? </h3>
+        <p>The shell is located within the User Space of an OS, because it is something that can be created/accessed by a user. By doing shell scripting, we are referring to an interaction between the User Space and the Kernel Space. Within the User Space, the shell shares the space with Application Software, libraries, Daemons, and Tools.</p>
+    </div>
+
+
+
+
+    <div>
+    <h3>5. What is the main task of the shell?</h3>
+    <p>What the shell is responsible for is the execution of all the programs that a user requests from their terminal (CLI). Whenever a user types a line (Command Line) to the shell, it analyzes in order to determine what to do, for example programs to be executed or arguments to pass on to a program.</p>
+    <p>source: https://www.informit.com/articles/article.aspx?p=31480&seqNum=4</p>
+    </div>
+
+
+    
+
+
+    <div>
+    <h3>6. What is the octal representation of a file the can be read and written only by its owner?</h3>
+
+    <p>To reply this question I have used page 64-65 in the book: Ten Steps to Linux Survival, by  Jim Lehmer.</p>
+
+    <p>We are aware of that a file is given: -, and a directory is given: d. Here we would use the "chmod" to change the permissions.</p>
+    <p>With the Octal numbers, "no permission" would be given the number of "zero", and "all permission" would be given the number of "seven". To think the permission as binary places would be helpful, this explains the system:
+    </p>
+    <p>r=2^2=4</p>
+    <p>w=2^1=2</p>
+    <p>x=2^0=1</p>
+
+    <p>Notice, that if I combine 4+2+1, I will achieve the result 7. So the number 7 would give a user read, write and execute access.</p>
+    <p>The octal representation of a file that can be only read and written by the user in our case would look like this:</p>
+    <p>r--=2^2+2^1+0, which will give us = 600,</p>
+    
+    <p>And since it is only the user who can read the file, the group and other would have the value of zero, where both row and x in them both are zero. So, to answer the question, we will get this result:</p>
+    <p>chmod 600 answer2.txt</p>
+    <p>Where the result would be similar to this in the symbolic version:</p>
+    <p>-rw-------</p>
+    </div>
+
+
+    <div>
+    <h3>7. In UNIX systems, what is the common name of the special user who can access and modify every file?</h3>
+        <p>In UNIX systems, the name of the special user that can access and modify every file is Super User, which is the root user. In order to access it, one can use the sudo command, where sudo stands for Super User DO.</p>
+        <p>Source: https://www.unixtutorial.org/commands/sudo</p>
+    </div>
+
+    
+
+    <div>
+    <h3>8. Which file permission classes are available in UNIX systems?</h3>
+
+    <p>The file permission classes are: User, Group and Others..where the last class: "others", are neither user or member of a group.</p>
+    <p>The file permission classes, each have each these permissions (discussed previously in 6.):</p>
+    <p>rwx</p>
+    <p>This was solved with the help of the link, given in lecture 10 (Scripting I):</p>
+    <p>https://alexoviedo999.gitbooks.io/javascript-distill/content/unixlinuxterminal.html#changing-access-permissions-</p>
+    </div>
+
+
+    <div>
+    <h3>9. AS of 2020, which percentage of servers have UNIX-like OS?</h3>
+    <p>According to W3Techs.com, as of 16. of November 2020, 71.8% of the server OS are unix or unix-like.</p>
+    <p>Source link: https://w3techs.com/technologies/overview/operating_system</p>
+    </div>
+
+
+
+
+    <div>
+    <h3>10. The command SSH will:</h3>
+        <p>Create an encrypted connection between a user and the area the user is connecting to, for example a server - in my case I will create a connection through my terminal to my folk site at NTNU.</p>
+        <p>Source: https://innsida.ntnu.no/wiki/-/wiki/Norsk/Sikker+med+SSH</p>
+    </div>
+
+
+
+
+    <div>
+    <h3>11. UNIX Command: access your current working directory?</h3>
+    <p>pwd</p>
+    </div>
+
+
+
+    <div>
+    <h3>12. UNIX Command: rename files (give an example)?</h3>
+    <p>mv</p>
+    <p>An example here would be for me to change a file called: navid.txt, to: navid2.txt. I would in this insert following in the terminal: mv navid.txt navid2.txt</p>
+    <p>Source: https://leanpub.com/jelinux/read</p>
+    </div>
+
+
+
+    <div>
+    <h3>13. UNIX Command: schedule the execution of programs in the future?</h3>
+    <p>crontab</p>
+    <p>Source: https://leanpub.com/jelinux/read#crontab</p>
+    </div>
+
+
+
+    <div>
+    <h3>14. UNIX Command: Forcefully shutdown the command with process ID 123</h3>
+    <p>kill 123</p>
+    <p>Explanation behind my answer: I assume that the kill 123 (that kill on its self by default specifies signal 15 "SIGTERM"). If the projects still refuses to shutdown, we could use signal 9 "SIGKILL", with the code: kill -9 123.</p>
+    <p>source: https://leanpub.com/jelinux/read#kill</p>
+    </div>
+
+
+
+    <div>
+    <h3>15. UNIX Command: access your root user</h3>
+    <p>sudo</p>
+    </div>
+
+
+
+    <div>
+    <h3>16. Crontab scheduled: At minute 30 on Sunday.</h3>
+    <p>30 * * * 0</p>
+    <p>Explanation: programmed to run every at 30 throughout Sunday. First one: 00:30, and then 01:30 and so on..</p>
+    <p>source: https://crontab.guru/#30_*_*_*_0</p>
+    </div>
+
+
+
+    <div>
+    <h3>17. Crontab scheduled: At minute 30 on day-of-month 15.</h3>
+    <p>	30 * 15 * *</p>
+    <p>Explanation: program to be ruined every 30 minute, on the 15th day of the month</p>
+    <p>source: https://crontab.guru/#30_*_15_*_*</p>
+    </div>
+
+
+
+    <div>
+    <h3>18. Crontab scheduled: At 05:30 on every day-of-week from Sunday through Monday in June.</h3>
+    <p>30 5 * 6 0-1</p>
+    <p>source: https://crontab.guru/#30_5_*_6_0-1</p>
+    </div>
+
+
+
+    <div>
+    <h3>19. Script: print your name and date</h3>
+    <code>#!/bin/bash<br>
+        #echo your variable as an input<br>
+        read -p "please enter your name: " name<br>
+        echo "your name is: " $name<br>
+        #date<br>
+        echo "current date: $(date)"<br>
+        Source: from lab2
+        </code>
+    </div>
+
+
+
+    <div>
+    <h3>20. Script: add two numeric values, print the result</h3>
+    <code>#!/bin/bash<br>
+        #adding two numeric values, print and result<br>
+        read -p "Please enter first number: " num1<br>
+        read -p "Please enter second number: " num2<br>
+        echo "The total is: " $((num1+num2))<br>
+        Source: lab2</code>
+    </div>
+
+
+
+    <div>
+    <h3>21. Script: inputs username, prints “USERNAME stored”</h3>
+    <code>#!/bin/bash<br>
+        #Storing a username<br>
+        read -p "Please Enter your Username: " name<br>
+        echo "USERNAME stored"<br>
+    </code>
+    </div>
+
+
+
+
+    <div>
+    <h3>22. Script: Store the output of the command “hostname” in a variable. Display “This script is running on _.” where “_” is the output of the “hostname” command.</h3>
+    <code>#!/bin/bash<br>
+        #Script where the output would be "hostname"<br>
+        HOSTNAME=$(hostname)<br>
+        echo “This script is running on $HOSTNAME”<br>
+    </code>
+    </div>
+
+
+
+    <div>
+    <h3>23. Script: Store the output of the working directory (from where the script is run) in a variable then print the variable.</h3>
+        <code class="code-style">#!/bin/bash<br>
+        #Storing the output of the working directory in a variable, then printing the variable<br>
+        output=$(pwd)<br>
+        echo "The value of the output variable is: ${output}"<br>
+        </code>
+    </div>
+
+
+
+
+    <div>
+    <h3>24. Create a step by step tutorial on how to create a cronjob that prints “Task scheduled at” + DATE. Cronjob is scheduled every 30 minutes on today’s date (only today).</h3>
+    <ol>
+    <li>In the terminal enter: crontab -e which will open a cronfile</li> 
+    <li>read the text in order to get information about the execution of the cronjob</li>
+    <li>On a Mac, press "i" in order to edit the text</li>
+    <li>Go to crontab.guru in order to find out more about cronjobs, read and experiement by inserting numbers</li>
+    <li>Insert the details of the task in crontab.guru. Instead of following stars: * * * * *</li>
+        <ul>
+        <li> First star is for minutes</li>
+        <li> Second star is for hour</li>
+        <li> Third star is for date of the month</li>
+        <li> Fourth star is for month</li>
+        <li> Last star is for the day of a week</li>
+        <li> Since today is the 20th of November, the result would be:</li>
+        </ul>
+    </ol>
+    <p>The result inside the cronfile will be: </p>
+        <p>*/30 * 20 11 * echo "Task scheduled at $(date)"</p>
+
+    <p>PS! If this is correct, you should recieve e-mail on your NTNU account every 30 minutes.</p>
+    <p>source: https://crontab.guru/#*/30_*_20_11_*</p>    
+    </div>
+    
+
+
+
+    <div>
+    <h3>25. Create a script that takes an input (letter or number) that will display the answer of a question.
+        The script should when started list a menu for the user with the different questions that can be
+        chosen and which corresponding letter the user will have to give as input to display the answer of
+        the desired question. One of the possible inputs the user should be able to make is "q" for quitting
+        the script. The menu should also have a default case where all the items is displayed again, or no
+        changes is made if the user gives an invalid input. Hint: use a switch case to be able to handle the
+        menu. Each option in the menu should lead to an echo of the answer
+        </h3>
+        <code>#!/bin/bash<br>
+            #Case statement<br>
+            while<br>
+            [ "$answer" != "q" ]<br>
+            do<br>
+            <br>
+            echo "What is your favorite food among these?"<br>
+            echo "1) Pizza"<br>
+            echo "2) Pasta"<br>
+            echo "3) Burger"<br>
+            echo "4) Lasagna"<br>
+            echo "5) Biff"<br>
+            echo "q) Quit the script"<br>
+            echo -n "Choose one alternative: "<br>
+            <br>
+            read -r answer<br>
+            case $answer in<br>
+                    1)<br>
+                            clear<br>
+                            echo "Pizza is delicious."<br>
+                            read -r<br>
+                            clear;;<br>
+                    2)<br>
+                            clear
+                            echo "Pasta is nice sometimes, yes."<br>
+                            read -r<br>
+                            clear;;<br>
+                    3)<br>
+                            clear<br>
+                            echo "Burger is good with Blue Cheese."<br>
+                            read -r<br>
+                            clear;;<br>
+                    4)<br>
+                            clear<br>
+                            echo "You can't find better Lasagna than in Italy."<br>
+                            read -r<br>
+                            clear;;<br>
+                    5)<br>
+                            clear<br>
+                            echo "Eating Biff should be illegal."<br>
+                            read -r<br>
+                            clear;;<br>
+                    q)<br>
+                            echo "Bye!"<br>
+                            exit 0;;<br>
+                    *)<br>
+                            echo "Unknown input, please enter a number between 1-5, or q for quitting."<br>
+                            read -r;;<br>
+            esac<br>
+            done<br>
+
+            </code>
+    </div>
+
+</body>
+
+</html>
